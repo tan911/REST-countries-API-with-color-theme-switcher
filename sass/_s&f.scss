@@ -1,0 +1,111 @@
+.filter-section {
+  margin-top: 6rem;
+  align-items: center;
+
+  @include flex-box--template($padding);
+}
+
+.input-container {
+  width: 25%;
+  position: relative;
+}
+
+input,
+.select-region {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+input {
+  width: 100%;
+  background-color: $bg-color-light;
+  padding: 2rem 7rem;
+
+  &::placeholder {
+    font-family: inherit;
+    font-size: 1.5rem;
+    letter-spacing: 0.3px;
+    opacity: 0.8;
+  }
+
+  &[type='search'] {
+    font-size: 1.6rem;
+  }
+}
+
+.search-icon {
+  position: absolute;
+  left: 25px;
+  top: 20px;
+  font-size: 1.8rem;
+  opacity: 0.7;
+  font-weight: 800;
+}
+
+//////////////////////
+// filter region
+
+.filter-region--container {
+  width: 10%;
+  position: relative;
+}
+
+.select-region {
+  background-color: $bg-color-light;
+  padding: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  & p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+.dropdown-icon {
+  font-size: 1.5rem;
+}
+
+.filter--region {
+  position: absolute;
+  width: 100%;
+  background-color: $bg-color-light;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 1rem 1rem 1rem 0;
+  margin-top: 3px;
+  z-index: 100;
+}
+
+/* hide regions */
+.hidden {
+  display: none;
+}
+
+.list--items {
+  margin: 0;
+  list-style-type: none;
+  font-size: 1.5rem;
+  padding-left: 2rem;
+
+  & li:hover {
+    cursor: pointer;
+    font-weight: 800;
+    opacity: 0.7;
+    background-color: $bg-color--semi-light;
+  }
+
+  & li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,35 @@
+//  COLORS
+$bg-color--dark-blue: hsl(207, 26%, 17%);
+$bg-color-dark: hsl(209, 23%, 22%);
+$bg-color--semi-light: hsl(0, 0%, 98%);
+$bg-color-light: hsl(0, 0%, 100%);
+
+//  PADDING
+$padding: 1rem 4rem;
+$padding-medium: 0.8rem 2rem;
+
+@mixin flex-box--template($padding) {
+  & {
+    display: flex;
+    justify-content: space-between;
+    padding: $padding;
+    // padding: 1rem 4rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: $bg-color--semi-light;
+}
