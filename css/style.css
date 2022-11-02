@@ -119,6 +119,31 @@ input {
   .list--items li:not(:last-child) {
     margin-bottom: 10px; }
 
+.button-container {
+  padding: 1rem 4rem;
+  margin-top: 6rem; }
+
+.button {
+  display: inline-block;
+  background-color: white;
+  padding: 1rem 4rem;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s; }
+  .button .arrow-icon {
+    font-size: 2rem; }
+  .button a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: black;
+    text-decoration: none; }
+  .button:active {
+    transform: translateY(5px); }
+
 .countries--container {
   margin-top: 2rem;
   padding: 1rem 4rem;
@@ -127,10 +152,16 @@ input {
   column-gap: 10rem;
   row-gap: 10rem;
   transition: opacity 0.2s;
-  opacity: 0; }
+  cursor: pointer; }
 
 .countries {
-  width: 100%; }
+  width: 100%;
+  transition: transform 0.3s; }
+  .countries a {
+    text-decoration: none;
+    color: black; }
+  .countries:active {
+    transform: translateY(5px); }
 
 .country {
   width: 100%;
@@ -161,6 +192,24 @@ input {
 
 .country__row span {
   font-weight: 300; }
+
+.container {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  font-size: 1.8rem;
+  padding: 1rem 4rem; }
+
+.img-container {
+  width: 80%;
+  align-self: center; }
+  .img-container img {
+    width: 100%; }
+
+.rootData-container {
+  border: 1px solid blue;
+  width: 100%; }
 
 /* BELOW 1440px */
 @media (max-width: 90em) {

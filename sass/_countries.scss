@@ -9,11 +9,22 @@
   row-gap: 10rem;
 
   transition: opacity 0.2s;
-  opacity: 0;
+  // opacity: 0;
+  cursor: pointer;
 }
 
 .countries {
   width: 100%;
+  transition: transform 0.3s;
+
+  & a {
+    text-decoration: none;
+    color: black;
+  }
+
+  &:active {
+    transform: translateY(5px);
+  }
 }
 
 .country {
@@ -50,4 +61,29 @@
 
 .country__row span {
   font-weight: 300;
+}
+
+// detailed country
+
+.container {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  font-size: 1.8rem;
+  padding: $padding;
+}
+
+.img-container {
+  width: 80%;
+  align-self: center;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.rootData-container {
+  border: 1px solid blue;
+  width: 100%;
 }
