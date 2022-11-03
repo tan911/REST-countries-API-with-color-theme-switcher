@@ -11,12 +11,20 @@
   .filter-region--container {
     width: 12%;
   }
+
+  .container {
+    gap: 18rem;
+  }
 }
 
 /* BELOW 1300px */
 @media (max-width: 81em) {
   .filter-region--container {
     width: 15%;
+  }
+
+  .container {
+    gap: 17rem;
   }
 }
 
@@ -28,6 +36,10 @@
 
   .dark-mode-container {
     width: 12%;
+  }
+
+  .container {
+    gap: 15rem;
   }
 }
 
@@ -48,6 +60,11 @@
   .countries--container {
     grid-template-columns: repeat(3, 1fr);
     gap: 7rem;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 12rem;
   }
 
   /* .countries--container {
@@ -72,6 +89,33 @@
   .countries--container {
     grid-template-columns: repeat(2, 1fr);
     gap: 8rem;
+  }
+
+  .container {
+    gap: 10rem;
+  }
+}
+
+// below 668px for detailed country
+@media (max-width: 42em) {
+  .data-container {
+    flex-direction: column;
+  }
+
+  .borders-container {
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .borders {
+    justify-content: space-between;
+
+    & .borders__link {
+      padding: 0.4rem 1.5rem;
+      font-size: 1.8rem;
+    }
   }
 }
 
@@ -123,5 +167,24 @@
 
   .filter-region--container {
     width: 60%;
+  }
+}
+
+// below 320px for detailed country
+@media (max-width: 20em) {
+  .button-container {
+    padding: $padding-medium;
+    margin-top: 4rem;
+  }
+
+  .container {
+    padding: $padding-medium;
+  }
+
+  .borders {
+    & .borders__link {
+      padding: 0.2rem 1rem;
+      font-size: 1.8rem;
+    }
   }
 }
