@@ -126,7 +126,6 @@ input {
 .button {
   display: inline-block;
   background-color: white;
-  padding: 1rem 4rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
   cursor: pointer;
@@ -137,6 +136,7 @@ input {
     display: flex;
     align-items: center;
     gap: 1rem;
+    padding: 1rem 4rem;
     font-size: 1.8rem;
     font-weight: 300;
     color: black;
@@ -169,8 +169,7 @@ input {
   background-color: white;
   font-size: 1.5rem;
   border-radius: 6px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  /* border: 2px solid red; */ }
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); }
 
 .country__data {
   padding: 0 2rem 3rem 2rem; }
@@ -194,22 +193,58 @@ input {
   font-weight: 300; }
 
 .container {
-  border: 1px solid red;
+  margin-top: 5rem;
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 20rem;
   font-size: 1.8rem;
   padding: 1rem 4rem; }
 
 .img-container {
-  width: 80%;
+  width: 100%;
   align-self: center; }
   .img-container img {
     width: 100%; }
 
 .rootData-container {
-  border: 1px solid blue;
-  width: 100%; }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center; }
+  .rootData-container .country--name {
+    font-size: 4rem; }
+
+.data-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800; }
+  .data-container .data_row {
+    margin: 1rem 0; }
+    .data-container .data_row span {
+      font-weight: 300; }
+
+.borders-container {
+  width: 100%;
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem; }
+  .borders-container p {
+    font-weight: 800;
+    margin: 0;
+    width: 30%; }
+  .borders-container .borders {
+    width: 100%;
+    display: flex;
+    gap: 2rem; }
+  .borders-container .borders__link {
+    padding: 1rem 3rem;
+    text-decoration: none;
+    color: black;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 3px; }
 
 /* BELOW 1440px */
 @media (max-width: 90em) {
@@ -218,19 +253,25 @@ input {
   .dark-mode-container {
     width: 9%; }
   .filter-region--container {
-    width: 12%; } }
+    width: 12%; }
+  .container {
+    gap: 18rem; } }
 
 /* BELOW 1300px */
 @media (max-width: 81em) {
   .filter-region--container {
-    width: 15%; } }
+    width: 15%; }
+  .container {
+    gap: 17rem; } }
 
 /* BELOW 1160px */
 @media (max-width: 72em) {
   .input-container {
     width: 30%; }
   .dark-mode-container {
-    width: 12%; } }
+    width: 12%; }
+  .container {
+    gap: 15rem; } }
 
 /* BELOW 1040px */
 @media (max-width: 65em) {
@@ -243,6 +284,9 @@ input {
   .countries--container {
     grid-template-columns: repeat(3, 1fr);
     gap: 7rem; }
+  .container {
+    flex-direction: column;
+    gap: 12rem; }
   /* .countries--container {
       column-gap: 2rem;
     } */ }
@@ -257,7 +301,23 @@ input {
     width: 25%; }
   .countries--container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 8rem; } }
+    gap: 8rem; }
+  .container {
+    gap: 10rem; } }
+
+@media (max-width: 42em) {
+  .data-container {
+    flex-direction: column; }
+  .borders-container {
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem; }
+  .borders {
+    justify-content: space-between; }
+    .borders .borders__link {
+      padding: 0.4rem 1.5rem;
+      font-size: 1.8rem; } }
 
 /* BELOW 580px */
 @media (max-width: 36em) {
@@ -295,3 +355,13 @@ input {
     padding: 0.8rem 2rem; }
   .filter-region--container {
     width: 60%; } }
+
+@media (max-width: 20em) {
+  .button-container {
+    padding: 0.8rem 2rem;
+    margin-top: 4rem; }
+  .container {
+    padding: 0.8rem 2rem; }
+  .borders .borders__link {
+    padding: 0.2rem 1rem;
+    font-size: 1.8rem; } }
