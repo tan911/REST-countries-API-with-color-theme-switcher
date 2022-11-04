@@ -1,7 +1,6 @@
 'use strict';
 
 import API from './countryDetailed.js';
-import { name } from './countryDetailed.js';
 
 const selectRegion = document.getElementById('select-region');
 const filterRegion = document.querySelector('.filter--region');
@@ -46,9 +45,7 @@ function countries(data) {
     .map(region => {
       r.push(region.region);
       return `
-      <div class="countries" onclick="dCountry('${
-        region.name.common === undefined ? region.name : region.name.common
-      }')">
+      <div class="countries">
       <a href="./countryDetailed.html">
        <article class="country">
       <img class="country__img" src=${region.flags.svg} />
@@ -74,7 +71,15 @@ function countries(data) {
   }
 
   const countryDetailed = document.querySelectorAll('.countries');
+  const name = document.querySelectorAll('.country__name');
   filter('', countryDetailed, r);
+
+  for (let i = 0; i < countryDetailed.length; i++) {
+    countryDetailed[i].addEventListener('click', () => {
+      const cName = name[i].textContent;
+      API(cName);
+    });
+  }
 }
 
 ///////////////////////
@@ -101,51 +106,6 @@ function filter(region, countryDetailed, data, r) {
   }
 }
 
-// TODO
-function dCountry(name) {
-  API(name);
-}
-
-dCountry('Barbados');
-
-/////////////////////////////
-// Render Detailed Country
-// function detailedCountry(data) {
-//   // const data = JSON.parse(region);
-//   console.log('hello data');
-//   if (data.length === 0) return;
-//   const htmlDetailedCountry = `
-//     <div class="img-container">
-//     <img src=${data[0].flag} alt="flag" />
-//   </div>
-//   <div class="rootData-container">
-//     <h3>${data[0].name}</h3>
-//     <div class="data-container">
-//       <p class="data_row">Native name: <span>${data[0].nativeName}</span></p>
-//       <p class="data_row">Top Level Domain: <span>${data[0].topLevelDomain}</span></p>
-//       <p class="data_row">Population: <span>${data[0].population}</span></p>
-//       <p class="data_row">Currencies: <span>${data[0].currencies.name}</span></p>
-//       <p class="data_row">Region: <span>${data[0].region}</span></p>
-//       <p class="data_row">Languages: <span>${data[0].languages.name}</span></p>
-//       <p class="data_row">Sub region: <span>${data[0].subregion}</span></p>
-//       <p class="data_row">Capital: <span>${data[0].capital}</span></p>
-//     </div>
-//     <div class="borders-container">
-//       <p>Border countries:</p>
-//       <div>
-//         <a href="#">Borders</a>
-//         <a href="#">Boreder</a>
-//         <a href="#">Borders</a>
-//       </div>
-//     </div>
-//   </div>
-//     `;
-
-//   if (htmlDetailedCountry) {
-//     renderDetailedCountry.insertAdjacentHTML('beforeend', htmlDetailedCountry);
-//   }
-// }
-
 ////////////////////////////////////
 // GETTING COUNTRY DATA
 async function getCountry() {
@@ -157,23 +117,6 @@ async function getCountry() {
     console.log(err);
   }
 }
-
-///////////////////
-// SET DATA BY NAME
-// if (renderDetailedCountry) {
-//   async function getCountryName(nameData) {
-//     try {
-//       const response = await fetch(
-//         `https://restcountries.com/v2/name/${nameData}`
-//       );
-//       const data = await response.json();
-
-//       console.log(data);
-//     } catch (err) {
-//       alert('Failed to load a country data');
-//     }
-//   }
-// }
 
 //////////////////////////////
 // toggle the filter dropdown
